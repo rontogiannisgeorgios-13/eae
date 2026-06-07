@@ -1,6 +1,6 @@
 :root{
   --bg:#f7f3ed;
-  --card:#ffffff;
+  --card:rgba(255,255,255,.72);
   --primary:#0d4650;
   --primary-dark:#082f36;
   --gold:#c4a06a;
@@ -8,7 +8,7 @@
   --muted:#6b7280;
 
   --shadow:
-    0 12px 28px rgba(16,47,56,.08);
+    0 12px 30px rgba(16,47,56,.08);
 }
 
 *{
@@ -23,7 +23,7 @@ body{
 
   background:
     radial-gradient(circle at top left,
-    rgba(196,160,106,.12),
+    rgba(196,160,106,.14),
     transparent 22rem),
     linear-gradient(
       180deg,
@@ -35,31 +35,55 @@ body{
 }
 
 .app-container{
+  position:relative;
+  overflow:hidden;
+
   max-width:430px;
   margin:0 auto;
-  padding:18px 16px 32px;
+  padding:18px 16px 30px;
+}
+
+.background-logo{
+  position:absolute;
+
+  inset:0;
+
+  background-image:
+  url('https://georgiosrontogiannis.gr/wp-content/uploads/2022/02/RONTOGIANNIS-logo1.webp');
+
+  background-repeat:no-repeat;
+  background-position:center 65%;
+  background-size:280px;
+
+  opacity:.025;
+
+  pointer-events:none;
 }
 
 .app-header{
+  position:relative;
+
   display:flex;
   align-items:center;
+
   gap:14px;
-  margin-bottom:34px;
+
+  margin-bottom:20px;
+
+  z-index:2;
 }
 
 .clinic-logo{
-  width:90px;
-  height:90px;
+  width:80px;
+  height:80px;
+
   object-fit:contain;
+
   flex-shrink:0;
 }
 
-.header-text{
-  flex:1;
-}
-
 .header-text h1{
-  font-size:28px;
+  font-size:24px;
   line-height:1.05;
   letter-spacing:-.05em;
   font-weight:800;
@@ -67,13 +91,59 @@ body{
 
 .header-text p{
   margin-top:8px;
+
   color:var(--gold);
+
   font-size:14px;
   font-weight:700;
-  letter-spacing:.02em;
+}
+
+.welcome-card{
+  position:relative;
+
+  z-index:2;
+
+  margin-bottom:16px;
+
+  padding:18px;
+
+  border-radius:24px;
+
+  background:
+    rgba(255,255,255,.55);
+
+  backdrop-filter:blur(14px);
+
+  border:1px solid rgba(255,255,255,.5);
+
+  box-shadow:var(--shadow);
+}
+
+.welcome-label{
+  color:var(--gold);
+
+  font-size:12px;
+  font-weight:700;
+
+  letter-spacing:.12em;
+
+  text-transform:uppercase;
+}
+
+.welcome-card h2{
+  margin-top:8px;
+
+  font-size:24px;
+  line-height:1.15;
+
+  letter-spacing:-.04em;
 }
 
 .appointment-card{
+  position:relative;
+
+  z-index:2;
+
   min-height:90px;
 
   display:flex;
@@ -101,12 +171,12 @@ body{
   margin-bottom:16px;
 }
 
-.appointment-card svg{
-  width:32px;
-  height:32px;
+.appointment-icon svg{
+  width:30px;
+  height:30px;
+
   stroke:white;
   stroke-width:1.8;
-  flex-shrink:0;
 }
 
 .appointment-card section{
@@ -117,35 +187,35 @@ body{
   font-size:22px;
   line-height:1;
   letter-spacing:-.04em;
-  font-weight:800;
 }
 
 .appointment-card p{
   margin-top:6px;
+
   color:#e7cf9d;
+
   font-size:13px;
 }
 
 .appointment-card span{
   font-size:36px;
+
   color:var(--gold);
-  font-weight:300;
 }
 
 .dashboard-grid{
+  position:relative;
+
+  z-index:2;
+
   display:grid;
   grid-template-columns:1fr 1fr;
+
   gap:12px;
 }
 
 .grid-card{
-  min-height:122px;
-
-  background:rgba(255,255,255,.95);
-
-  border:1px solid rgba(16,47,56,.08);
-
-  border-radius:24px;
+  min-height:120px;
 
   padding:16px;
 
@@ -153,17 +223,19 @@ body{
 
   color:inherit;
 
+  border-radius:24px;
+
+  background:var(--card);
+
+  backdrop-filter:blur(14px);
+
+  border:1px solid rgba(255,255,255,.5);
+
   box-shadow:var(--shadow);
 
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-
-  transition:.2s ease;
-}
-
-.grid-card:active{
-  transform:scale(.98);
 }
 
 .grid-card svg{
@@ -187,25 +259,20 @@ body{
 @media(max-width:380px){
 
   .clinic-logo{
-    width:80px;
-    height:80px;
+    width:70px;
+    height:70px;
   }
 
   .header-text h1{
-    font-size:24px;
+    font-size:22px;
   }
 
-  .appointment-card{
-    min-height:84px;
-    padding:16px;
-  }
-
-  .appointment-card h2{
-    font-size:20px;
+  .welcome-card h2{
+    font-size:21px;
   }
 
   .grid-card{
-    min-height:110px;
+    min-height:108px;
   }
 
   .grid-card strong{
