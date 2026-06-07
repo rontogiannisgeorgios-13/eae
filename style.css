@@ -20,6 +20,7 @@
 body{
   min-height:100vh;
   font-family:'Inter',sans-serif;
+
   background:
     radial-gradient(circle at top left,
     rgba(196,160,106,.12),
@@ -36,39 +37,44 @@ body{
 .app-container{
   max-width:430px;
   margin:0 auto;
-  padding:18px 16px 24px;
+  padding:18px 16px 32px;
 }
 
 .app-header{
   display:flex;
   align-items:center;
   gap:14px;
-  margin-bottom:18px;
+  margin-bottom:34px;
 }
 
 .clinic-logo{
-  width:68px;
-  height:68px;
+  width:90px;
+  height:90px;
   object-fit:contain;
   flex-shrink:0;
 }
 
+.header-text{
+  flex:1;
+}
+
 .header-text h1{
-  font-size:22px;
+  font-size:28px;
   line-height:1.05;
-  letter-spacing:-.04em;
+  letter-spacing:-.05em;
   font-weight:800;
 }
 
 .header-text p{
-  margin-top:4px;
+  margin-top:8px;
   color:var(--gold);
-  font-size:13px;
+  font-size:14px;
   font-weight:700;
+  letter-spacing:.02em;
 }
 
 .appointment-card{
-  min-height:86px;
+  min-height:90px;
 
   display:flex;
   align-items:center;
@@ -76,7 +82,7 @@ body{
 
   padding:18px;
 
-  border-radius:26px;
+  border-radius:28px;
 
   text-decoration:none;
 
@@ -92,14 +98,15 @@ body{
   box-shadow:
     0 18px 36px rgba(13,70,80,.22);
 
-  margin-bottom:14px;
+  margin-bottom:16px;
 }
 
 .appointment-card svg{
-  width:30px;
-  height:30px;
+  width:32px;
+  height:32px;
   stroke:white;
   stroke-width:1.8;
+  flex-shrink:0;
 }
 
 .appointment-card section{
@@ -110,10 +117,11 @@ body{
   font-size:22px;
   line-height:1;
   letter-spacing:-.04em;
+  font-weight:800;
 }
 
 .appointment-card p{
-  margin-top:5px;
+  margin-top:6px;
   color:#e7cf9d;
   font-size:13px;
 }
@@ -179,12 +187,17 @@ body{
 @media(max-width:380px){
 
   .clinic-logo{
-    width:58px;
-    height:58px;
+    width:80px;
+    height:80px;
   }
 
   .header-text h1{
-    font-size:19px;
+    font-size:24px;
+  }
+
+  .appointment-card{
+    min-height:84px;
+    padding:16px;
   }
 
   .appointment-card h2{
@@ -192,7 +205,7 @@ body{
   }
 
   .grid-card{
-    min-height:108px;
+    min-height:110px;
   }
 
   .grid-card strong{
