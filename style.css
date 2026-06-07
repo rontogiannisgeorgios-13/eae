@@ -23,74 +23,70 @@ body{
   min-height:100vh;
   margin:0 auto;
   padding:22px 16px 26px;
-  display:flex;
-  flex-direction:column;
 }
 
 .hero{
   text-align:center;
-  padding:8px 0 18px;
+  padding:6px 0 22px;
 }
 
-.logo-box{
-  width:62px;
-  height:62px;
+.clinic-logo{
+  width:190px;
+  max-width:72%;
+  height:auto;
   margin:0 auto 14px;
-  border-radius:18px;
-  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-  color:white;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:28px;
-  font-weight:800;
-  border:2px solid var(--gold);
-  box-shadow:0 14px 30px rgba(13,70,80,.20);
-}
-
-.eyebrow{
-  font-size:11px;
-  letter-spacing:3px;
-  color:var(--gold);
-  font-weight:800;
-  margin-bottom:8px;
+  display:block;
 }
 
 .hero h1{
-  font-size:26px;
-  line-height:1.08;
+  font-size:24px;
+  line-height:1.1;
   font-weight:800;
   letter-spacing:-.04em;
 }
 
-.divider{
-  width:42px;
-  height:2px;
-  background:var(--gold);
-  margin:16px auto 14px;
+.doctor-title{
+  margin-top:6px;
+  color:var(--gold);
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.04em;
 }
 
 .subtitle{
+  margin-top:18px;
   font-size:16px;
   color:var(--muted);
+}
+
+.section-title{
+  margin:4px 4px 10px;
+  font-size:13px;
+  font-weight:800;
+  color:var(--gold);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.section-gap{
+  margin-top:22px;
 }
 
 .menu{
   display:flex;
   flex-direction:column;
   gap:11px;
-  flex:1;
 }
 
 .card{
-  min-height:72px;
+  min-height:78px;
   display:flex;
   align-items:center;
-  gap:13px;
-  background:rgba(255,255,255,.92);
+  gap:15px;
+  background:rgba(255,255,255,.94);
   border:1px solid rgba(16,47,56,.08);
-  border-radius:22px;
-  padding:12px 14px;
+  border-radius:24px;
+  padding:14px 15px;
   color:inherit;
   text-decoration:none;
   box-shadow:var(--shadow);
@@ -98,40 +94,22 @@ body{
 }
 
 .card-primary{
-  min-height:84px;
+  min-height:88px;
   background:linear-gradient(135deg,var(--primary),var(--primary-dark));
   color:white;
   border:1px solid rgba(196,160,106,.55);
   box-shadow:0 18px 38px rgba(13,70,80,.24);
 }
 
-.icon-circle{
-  width:48px;
-  height:48px;
-  flex:0 0 48px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(13,70,80,.07);
-}
-
-.card-primary .icon-circle{
-  width:54px;
-  height:54px;
-  flex-basis:54px;
-  background:rgba(255,255,255,.13);
-  border:1px solid rgba(255,255,255,.24);
-}
-
-.icon-circle svg{
-  width:24px;
-  height:24px;
+.card > svg{
+  width:27px;
+  height:27px;
+  flex:0 0 27px;
   stroke:var(--primary);
-  stroke-width:1.9;
+  stroke-width:1.85;
 }
 
-.card-primary .icon-circle svg{
+.card-primary > svg{
   stroke:white;
 }
 
@@ -148,7 +126,7 @@ body{
 }
 
 .card-content p{
-  margin-top:4px;
+  margin-top:5px;
   font-size:13px;
   line-height:1.25;
   color:var(--muted);
@@ -159,42 +137,20 @@ body{
 }
 
 .arrow{
-  font-size:36px;
+  font-size:34px;
   line-height:1;
   font-weight:200;
   color:var(--gold);
   margin-left:2px;
 }
 
-.footer{
-  margin-top:18px;
-  text-align:center;
-  color:var(--muted);
-}
-
-.footer-icon{
-  display:none;
-}
-
-.footer-line{
-  width:72px;
-  height:1px;
-  background:rgba(196,160,106,.65);
-  margin:0 auto 10px;
-}
-
-.footer p{
-  font-size:13px;
-  letter-spacing:.05em;
-}
-
 @media(max-height:760px){
   .app-container{padding-top:14px}
-  .hero{padding-bottom:12px}
-  .logo-box{width:54px;height:54px;font-size:24px;margin-bottom:10px}
-  .hero h1{font-size:23px}
-  .divider{margin:12px auto}
-  .subtitle{font-size:15px}
-  .card{min-height:66px}
-  .card-primary{min-height:76px}
+  .clinic-logo{width:165px;margin-bottom:10px}
+  .hero{padding-bottom:16px}
+  .hero h1{font-size:22px}
+  .subtitle{margin-top:13px;font-size:15px}
+  .card{min-height:70px}
+  .card-primary{min-height:78px}
+  .section-gap{margin-top:16px}
 }
