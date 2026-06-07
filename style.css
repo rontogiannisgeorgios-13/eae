@@ -212,34 +212,3 @@ body{
     font-size:15px;
   }
 }
-.app-footer{
-  margin-top:26px;
-  padding:18px 12px 6px;
-  text-align:center;
-  color:var(--muted);
-}
-
-.app-footer::before{
-  content:"";
-  display:block;
-  width:72px;
-  height:1px;
-  background:rgba(196,160,106,.7);
-  margin:0 auto 14px;
-}
-
-.app-footer p{
-  font-size:14px;
-  font-weight:700;
-  color:var(--text);
-  letter-spacing:.02em;
-}
-
-.app-footer span{
-  display:block;
-  margin-top:6px;
-  font-size:12px;
-  color:var(--gold);
-  font-weight:600;
-  letter-spacing:.08em;
-}
