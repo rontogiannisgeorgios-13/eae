@@ -358,3 +358,21 @@ body{
   font-size:15px;
   color:var(--text);
 }
+
+/* =========================
+   GUIDE ACTION BUTTONS
+========================= */
+
+.compact-action{
+  min-height:72px !important;
+  margin-top:14px;
+}
+
+.compact-action h2{
+  font-size:20px !important;
+}
+
+.compact-action .appointment-icon svg{
+  width:28px;
+  height:28px;
+}
