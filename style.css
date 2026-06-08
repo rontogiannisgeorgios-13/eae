@@ -316,3 +316,45 @@ body{
     font-size:15px;
   }
 }
+
+/* =========================
+   GUIDE PAGE
+========================= */
+
+.guide-page{
+  position:relative;
+  z-index:2;
+}
+
+.info-card{
+  margin-bottom:14px;
+
+  padding:18px;
+
+  border-radius:24px;
+
+  background:var(--card);
+
+  border:1px solid rgba(255,255,255,.5);
+
+  backdrop-filter:blur(14px);
+
+  box-shadow:var(--shadow);
+}
+
+.info-title{
+  margin-bottom:10px;
+
+  font-size:17px;
+  font-weight:800;
+
+  color:var(--primary);
+
+  letter-spacing:-.02em;
+}
+
+.info-card p{
+  line-height:1.6;
+  font-size:15px;
+  color:var(--text);
+}
