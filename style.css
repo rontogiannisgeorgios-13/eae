@@ -189,6 +189,98 @@ body{
   stroke:var(--gold);
 }
 
+/* =========================
+   ENTYPA PAGE
+========================= */
+
+.page-header{
+  position:relative;
+  z-index:2;
+  margin-bottom:26px;
+}
+
+.back-button{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  margin-bottom:20px;
+  text-decoration:none;
+  color:var(--primary);
+  font-size:14px;
+  font-weight:700;
+}
+
+.back-button svg{
+  width:18px;
+  height:18px;
+}
+
+.page-header h1{
+  font-size:30px;
+  line-height:1.05;
+  letter-spacing:-.05em;
+  font-weight:800;
+}
+
+.page-header p{
+  margin-top:8px;
+  color:var(--muted);
+  font-size:15px;
+}
+
+.documents-page{
+  position:relative;
+  z-index:2;
+}
+
+.doc-group{
+  margin-bottom:28px;
+}
+
+.doc-group h3{
+  margin-bottom:12px;
+  color:var(--gold);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+}
+
+.doc-item{
+  min-height:62px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:16px 18px;
+  margin-bottom:10px;
+  text-decoration:none;
+  color:var(--text);
+  background:var(--card);
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.5);
+  backdrop-filter:blur(14px);
+  box-shadow:var(--shadow);
+  transition:.18s ease;
+}
+
+.doc-item:active{
+  transform:scale(.98);
+}
+
+.doc-item span{
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:-.02em;
+}
+
+.doc-item svg{
+  width:20px;
+  height:20px;
+  color:var(--gold);
+  stroke-width:2;
+  flex-shrink:0;
+}
+
 @media(max-width:380px){
   .clinic-logo{
     width:70px;
@@ -210,84 +302,13 @@ body{
   .grid-card strong{
     font-size:15px;
   }
-}
 
-.page-header{
-  position:relative;
-  z-index:2;
-  margin-bottom:22px;
-}
+  .page-header h1{
+    font-size:27px;
+  }
 
-.back-button{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  margin-bottom:18px;
-  color:var(--primary);
-  text-decoration:none;
-  font-size:14px;
-  font-weight:700;
-}
-
-.back-button svg{
-  width:20px;
-  height:20px;
-}
-
-.page-header h1{
-  font-size:28px;
-  line-height:1.05;
-  letter-spacing:-.05em;
-  font-weight:800;
-}
-
-.page-header p{
-  margin-top:8px;
-  color:var(--muted);
-  font-size:15px;
-}
-
-.docs-section{
-  position:relative;
-  z-index:2;
-  margin-bottom:24px;
-}
-
-.docs-section h2{
-  margin-bottom:10px;
-  color:var(--gold);
-  font-size:13px;
-  font-weight:800;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
-.doc-card{
-  min-height:62px;
-  margin-bottom:10px;
-  padding:14px 16px;
-  display:flex;
-  align-items:center;
-  gap:12px;
-  border-radius:20px;
-  background:var(--card);
-  border:1px solid rgba(255,255,255,.5);
-  box-shadow:var(--shadow);
-  backdrop-filter:blur(14px);
-  text-decoration:none;
-  color:var(--text);
-}
-
-.doc-card svg{
-  width:24px;
-  height:24px;
-  stroke:var(--primary);
-  stroke-width:1.85;
-  flex-shrink:0;
-}
-
-.doc-card span{
-  font-size:15px;
-  font-weight:800;
-  letter-spacing:-.02em;
+  .doc-item{
+    min-height:58px;
+    padding:14px 16px;
+  }
 }
