@@ -1,7 +1,8 @@
 {
   "name": "Dr Rontogiannis",
   "short_name": "Dr Rontogiannis",
-  "start_url": "/",
+  "start_url": "/rontogiannis-mini-app/",
+  "scope": "/rontogiannis-mini-app/",
   "display": "standalone",
   "background_color": "#f6f1ea",
   "theme_color": "#163b3f",
