@@ -144,49 +144,49 @@ body{
   color:var(--gold);
 }
 
-.dashboard-grid{
-  position:relative;
-  z-index:2;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:12px;
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
 }
 
-.grid-card{
-  min-height:100px;
-  padding:16px;
-  text-decoration:none;
-  color:inherit;
-  border-radius:24px;
-  background:var(--card);
-  backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,.5);
-  box-shadow:var(--shadow);
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  transition:.18s ease;
+.grid-card {
+  min-width: 0;
+  width: 100%;
+  min-height: 118px;
+  border-radius: 24px;
+  padding: 18px 12px;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
 }
 
-.grid-card:active{
-  transform:scale(.98);
+.grid-card i {
+  width: 30px;
+  height: 30px;
+  color: #a98755;
 }
 
-.grid-card svg{
-  width:28px;
-  height:28px;
-  stroke:var(--primary);
-  stroke-width:1.85;
+.grid-card strong {
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 700;
 }
 
-.grid-card strong{
-  font-size:16px;
-  line-height:1.15;
-  letter-spacing:-.03em;
-}
-
-.grid-card:last-child svg{
-  stroke:var(--gold);
+/* Σβήνει τυχόν παλιούς κανόνες που έκαναν πρώτο/τελευταίο κουμπί full width */
+.dashboard-grid .grid-card,
+.dashboard-grid .grid-card:first-child,
+.dashboard-grid .grid-card:last-child {
+  grid-column: auto !important;
 }
 
 /* =========================
