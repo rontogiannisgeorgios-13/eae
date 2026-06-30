@@ -1,148 +1,226 @@
-:root{
-  --bg:#f6f1ea;
-  --card:rgba(255,255,255,.82);
-  --primary:#163b3f;
-  --primary-dark:#071f23;
-  --gold:#a98755;
-  --text:#122d31;
-  --muted:#6f7678;
-  --shadow:0 16px 38px rgba(7,31,35,.12);
+:root {
+  --primary: #223b73;
+  --primary-dark: #162b57;
+  --primary-deep: #0f2147;
+  --primary-light: #aeb8d3;
+
+  --bg: #f4f6fb;
+  --bg-soft: #eef2fa;
+  --surface: #ffffff;
+
+  --text: #172b55;
+  --muted: #6f7fa3;
+
+  --border: rgba(34, 59, 115, 0.14);
+  --shadow-soft: 0 12px 28px rgba(22, 43, 87, 0.10);
+  --shadow-strong: 0 18px 38px rgba(22, 43, 87, 0.22);
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-  min-height:100vh;
-  font-family:'Inter',sans-serif;
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(196,160,106,.14), transparent 22rem),
-    linear-gradient(180deg,#fffdf8 0%,#f7f3ed 100%);
-  color:var(--text);
+    radial-gradient(circle at top, rgba(174, 184, 211, 0.24), transparent 38%),
+    linear-gradient(180deg, #ffffff 0%, var(--bg-soft) 100%);
+  color: var(--text);
 }
 
-.app-container{
-  position:relative;
-  overflow:hidden;
-  max-width:430px;
-  margin:0 auto;
-  padding:18px 16px 30px;
+/* App frame */
+
+.app-container {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 22px 18px 34px;
+  overflow: hidden;
 }
 
-.background-logo{
-  position:absolute;
-  inset:0;
-  background-image:url('https://www.eae-net.gr/images/logo/EAE_logo_EN.png');
-  background-repeat:no-repeat;
-  background-position:center 65%;
-  background-size:280px;
-  opacity:.025;
-  pointer-events:none;
+/* Background watermark logo */
+
+.background-logo {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: center 120px;
+  background-size: 310px;
+  opacity: 0.045;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.app-header{
-  position:relative;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin-bottom:20px;
-  z-index:2;
+.app-header,
+.welcome-card,
+.appointment-card,
+.dashboard-grid {
+  position: relative;
+  z-index: 1;
 }
 
-.clinic-logo{
-  width:110px;
-  height:110px;
-  object-fit:contain;
-  flex-shrink:0;
+/* Header */
+
+.app-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
 }
 
-.header-text h1{
-  font-size:24px;
-  line-height:1.05;
-  letter-spacing:-.05em;
-  font-weight:800;
+.clinic-logo {
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 5px;
+  flex-shrink: 0;
+  box-shadow: 0 10px 24px rgba(22, 43, 87, 0.14);
+  border: 1px solid rgba(34, 59, 115, 0.12);
 }
 
-.header-text p{
-  margin-top:8px;
-  color:var(--gold);
-  font-size:14px;
-  font-weight:700;
+.header-text {
+  min-width: 0;
 }
 
-.welcome-card{
-  position:relative;
-  z-index:2;
-  margin-bottom:16px;
-  padding:18px;
-  border-radius:24px;
-  background:rgba(255,255,255,.55);
-  backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,.5);
-  box-shadow:var(--shadow);
+.header-text h1 {
+  margin: 0;
+  font-size: 24px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.8px;
+  color: var(--primary-deep);
 }
 
-.welcome-label{
-  color:var(--gold);
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
+.header-text p {
+  margin: 7px 0 0;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 600;
+  color: var(--primary);
 }
 
-.welcome-card h2{
-  margin-top:8px;
-  font-size:22px;
-  line-height:1.15;
-  letter-spacing:-.04em;
+/* Welcome card */
+
+.welcome-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 21px 20px 22px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 16px;
+  backdrop-filter: blur(14px);
 }
 
-.appointment-card{
-  position:relative;
-  z-index:2;
-  min-height:90px;
-  display:flex;
-  align-items:center;
-  gap:14px;
-  padding:18px;
-  border-radius:28px;
-  text-decoration:none;
-  color:white;
-  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
-  box-shadow:0 18px 36px rgba(13,70,80,.22);
-  margin-bottom:16px;
+.welcome-label {
+  margin: 0 0 9px;
+  font-size: 12px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--primary);
 }
 
-.appointment-icon svg{
-  width:30px;
-  height:30px;
-  stroke:white;
-  stroke-width:1.8;
+.welcome-card h2 {
+  margin: 0;
+  font-size: 23px;
+  line-height: 1.08;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+  color: var(--primary-deep);
 }
 
-.appointment-card section{
-  flex:1;
+/* Main newsletter button */
+
+.appointment-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-height: 96px;
+  text-decoration: none;
+  background:
+    linear-gradient(135deg, var(--primary-deep) 0%, var(--primary-dark) 48%, var(--primary) 100%);
+  color: #ffffff;
+  border-radius: 28px;
+  padding: 18px 18px;
+  box-shadow: var(--shadow-strong);
+  margin-bottom: 18px;
+  overflow: hidden;
 }
 
-.appointment-card h2{
-  font-size:22px;
-  line-height:1;
-  letter-spacing:-.04em;
+.appointment-card::after {
+  content: "";
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  right: -72px;
+  top: -76px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
 }
 
-.appointment-card p{
-  margin-top:6px;
-  color:#e7cf9d;
-  font-size:13px;
+.appointment-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
-.appointment-card span{
-  font-size:36px;
-  color:var(--gold);
+.appointment-icon i {
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+  stroke-width: 1.9;
 }
+
+.appointment-card section {
+  min-width: 0;
+  flex: 1;
+}
+
+.appointment-card h2 {
+  margin: 0 0 5px;
+  font-size: 23px;
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+
+.appointment-card p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.25;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.appointment-card span {
+  position: relative;
+  z-index: 1;
+  margin-left: auto;
+  font-size: 34px;
+  line-height: 1;
+  color: var(--primary-light);
+}
+
+/* Grid buttons */
 
 .dashboard-grid {
   display: grid;
@@ -155,224 +233,101 @@ body{
   min-width: 0;
   width: 100%;
   min-height: 118px;
-  border-radius: 24px;
+  border-radius: 26px;
   padding: 18px 12px;
   text-decoration: none;
-  color: inherit;
-  background: rgba(255, 255, 255, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  color: var(--primary-deep);
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 24px rgba(22, 43, 87, 0.08);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 13px;
   text-align: center;
+  backdrop-filter: blur(12px);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
 }
 
 .grid-card i {
-  width: 30px;
-  height: 30px;
-  color: #a98755;
+  width: 31px;
+  height: 31px;
+  color: var(--primary);
+  stroke-width: 1.9;
 }
 
 .grid-card strong {
+  display: block;
   font-size: 15px;
-  line-height: 1.2;
-  font-weight: 700;
+  line-height: 1.16;
+  font-weight: 750;
+  color: var(--primary-deep);
 }
 
-/* Σβήνει τυχόν παλιούς κανόνες που έκαναν πρώτο/τελευταίο κουμπί full width */
+.grid-card:hover,
+.grid-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(22, 43, 87, 0.14);
+  border-color: rgba(34, 59, 115, 0.24);
+  outline: none;
+}
+
+/* Force 2 columns / 3 rows.
+   This overrides any old rule that made first or last card full width. */
+
 .dashboard-grid .grid-card,
 .dashboard-grid .grid-card:first-child,
 .dashboard-grid .grid-card:last-child {
   grid-column: auto !important;
 }
 
-/* =========================
-   ENTYPA PAGE
-========================= */
+/* Mobile refinements */
 
-.page-header{
-  position:relative;
-  z-index:2;
-  margin-bottom:20px;
-}
-
-.back-button{
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  margin-bottom:16px;
-  text-decoration:none;
-  color:var(--primary);
-  font-size:14px;
-  font-weight:800;
-}
-
-.back-button svg{
-  width:18px;
-  height:18px;
-  stroke-width:2.2;
-}
-
-.documents-page{
-  position:relative;
-  z-index:2;
-}
-
-.doc-group{
-  margin-bottom:28px;
-}
-
-.doc-group h3{
-  margin-bottom:12px;
-  padding-left:4px;
-  color:var(--gold);
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-}
-
-.doc-button{
-  min-height:72px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:14px;
-  padding:18px;
-  margin-bottom:12px;
-  text-decoration:none;
-  color:var(--text);
-  border-radius:24px;
-  background:var(--card);
-  backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,.5);
-  box-shadow:var(--shadow);
-  transition:.18s ease;
-}
-
-.doc-button:active{
-  transform:scale(.98);
-}
-
-.doc-left{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.doc-left svg{
-  width:25px;
-  height:25px;
-  stroke:var(--primary);
-  stroke-width:1.85;
-  flex-shrink:0;
-}
-
-.doc-left span{
-  font-size:16px;
-  font-weight:800;
-  letter-spacing:-.03em;
-}
-
-.doc-button > svg{
-  width:22px;
-  height:22px;
-  stroke:var(--gold);
-  stroke-width:2.2;
-  flex-shrink:0;
-}
-
-@media(max-width:380px){
-  .clinic-logo{
-    width:70px;
-    height:70px;
+@media (max-width: 380px) {
+  .app-container {
+    padding: 18px 14px 28px;
   }
 
-  .header-text h1{
-    font-size:22px;
+  .clinic-logo {
+    width: 70px;
+    height: 70px;
   }
 
-  .welcome-card h2{
-    font-size:21px;
+  .header-text h1 {
+    font-size: 22px;
   }
 
-  .grid-card{
-    min-height:108px;
+  .header-text p {
+    font-size: 14px;
   }
 
-  .grid-card strong{
-    font-size:15px;
+  .welcome-card h2 {
+    font-size: 21px;
   }
 
-  .doc-button{
-    min-height:64px;
-    padding:16px;
+  .appointment-card h2 {
+    font-size: 21px;
   }
 
-  .doc-left span{
-    font-size:15px;
+  .grid-card {
+    min-height: 110px;
+    border-radius: 23px;
   }
 }
 
-/* =========================
-   GUIDE PAGE
-========================= */
+/* Larger phone screens */
 
-.guide-page{
-  position:relative;
-  z-index:2;
-}
+@media (min-width: 431px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
 
-.info-card{
-  margin-bottom:14px;
-
-  padding:18px;
-
-  border-radius:24px;
-
-  background:var(--card);
-
-  border:1px solid rgba(255,255,255,.5);
-
-  backdrop-filter:blur(14px);
-
-  box-shadow:var(--shadow);
-}
-
-.info-title{
-  margin-bottom:10px;
-
-  font-size:17px;
-  font-weight:800;
-
-  color:var(--primary);
-
-  letter-spacing:-.02em;
-}
-
-.info-card p{
-  line-height:1.6;
-  font-size:15px;
-  color:var(--text);
-}
-
-/* =========================
-   GUIDE ACTION BUTTONS
-========================= */
-
-.compact-action{
-  min-height:72px !important;
-  margin-top:14px;
-}
-
-.compact-action h2{
-  font-size:20px !important;
-}
-
-.compact-action .appointment-icon svg{
-  width:28px;
-  height:28px;
+  .app-container {
+    box-shadow: 0 0 50px rgba(22, 43, 87, 0.08);
+  }
 }
