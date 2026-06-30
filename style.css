@@ -62,6 +62,7 @@ body {
 
 .app-header,
 .welcome-card,
+.install-panel,
 .appointment-card,
 .dashboard-grid {
   position: relative;
@@ -98,7 +99,7 @@ body {
   font-size: 24px;
   line-height: 1.05;
   font-weight: 800;
-  letter-spacing: -0.8px;
+  letter-spacing: 0;
   color: var(--primary-deep);
 }
 
@@ -137,8 +138,79 @@ body {
   font-size: 23px;
   line-height: 1.08;
   font-weight: 800;
-  letter-spacing: -0.7px;
+  letter-spacing: 0;
   color: var(--primary-deep);
+}
+
+
+/* Install controls */
+
+.install-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 16px;
+}
+
+.install-button {
+  min-width: 0;
+  min-height: 48px;
+  border: 1px solid rgba(34, 59, 115, 0.18);
+  border-radius: 16px;
+  background: #ffffff;
+  color: var(--primary-deep);
+  box-shadow: 0 8px 18px rgba(22, 43, 87, 0.08);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 12px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 1.12;
+  font-weight: 750;
+  text-align: center;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.install-button i {
+  width: 19px;
+  height: 19px;
+  color: var(--primary);
+  flex-shrink: 0;
+  stroke-width: 2;
+}
+
+.install-button:hover,
+.install-button:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(34, 59, 115, 0.28);
+  box-shadow: 0 12px 24px rgba(22, 43, 87, 0.12);
+  outline: none;
+}
+
+.install-button:disabled {
+  cursor: default;
+  opacity: 0.68;
+  transform: none;
+}
+
+.install-button[hidden] {
+  display: none;
+}
+
+.install-help {
+  grid-column: 1 / -1;
+  min-height: 18px;
+  margin: 0;
+  padding: 0 2px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+  font-weight: 600;
 }
 
 /* Main newsletter button */
@@ -199,7 +271,7 @@ body {
   font-size: 23px;
   line-height: 1.05;
   font-weight: 800;
-  letter-spacing: -0.5px;
+  letter-spacing: 0;
   color: #ffffff;
 }
 
@@ -311,6 +383,16 @@ body {
 
   .appointment-card h2 {
     font-size: 21px;
+  }
+
+  .install-panel {
+    gap: 8px;
+  }
+
+  .install-button {
+    min-height: 46px;
+    padding: 9px 10px;
+    font-size: 12px;
   }
 
   .grid-card {

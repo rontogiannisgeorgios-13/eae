@@ -1,21 +1,26 @@
 {
-  "name": "Dr Rontogiannis",
-  "short_name": "Dr Rontogiannis",
-  "start_url": "/rontogiannis-mini-app/",
-  "scope": "/rontogiannis-mini-app/",
+  "name": "Ελληνική Αρθροσκοπική Εταιρεία",
+  "short_name": "EAE",
+  "description": "Mini app της Ελληνικής Αρθροσκοπικής Εταιρείας.",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#f6f1ea",
-  "theme_color": "#163b3f",
+  "orientation": "portrait",
+  "background_color": "#f4f6fb",
+  "theme_color": "#162b57",
   "icons": [
     {
       "src": "images/icon-192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     },
     {
       "src": "images/icon-512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }
