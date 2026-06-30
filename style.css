@@ -148,8 +148,8 @@ body {
 .install-panel {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   margin: 0 0 16px;
 }
@@ -163,13 +163,13 @@ body {
   color: var(--primary-deep);
   box-shadow: 0 8px 18px rgba(22, 43, 87, 0.08);
   cursor: pointer;
-  display: inline-flex;
+  display: none;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 10px 12px;
   font: inherit;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.12;
   font-weight: 750;
   text-align: center;
@@ -204,14 +204,17 @@ body {
 }
 
 .install-help {
-  grid-column: 1 / -1;
+  display: none;
   min-height: 18px;
   margin: 0;
-  padding: 0 2px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.78);
   color: var(--muted);
   font-size: 12px;
   line-height: 1.35;
   font-weight: 600;
+  text-align: center;
 }
 
 /* Main newsletter button */
@@ -391,14 +394,10 @@ body {
     font-size: 21px;
   }
 
-  .install-panel {
-    gap: 8px;
-  }
-
   .install-button {
     min-height: 46px;
     padding: 9px 10px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .grid-card {

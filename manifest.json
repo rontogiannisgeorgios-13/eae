@@ -1,12 +1,10 @@
 {
   "name": "Ελληνική Αρθροσκοπική Εταιρεία",
   "short_name": "EAE",
-  "description": "Mini app της Ελληνικής Αρθροσκοπικής Εταιρείας.",
   "id": "./",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "orientation": "portrait",
   "background_color": "#f4f6fb",
   "theme_color": "#162b57",
   "icons": [
@@ -14,13 +12,13 @@
       "src": "images/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "images/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     }
   ]
 }
