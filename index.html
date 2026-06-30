@@ -1,107 +1,77 @@
-<!DOCTYPE html>
-
-<html lang="el">
+<!DOCTYPE html><html lang="el">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ελληνική Αρθροσκοπική Εταιρία | Mini App</title>
-
-  <meta name="theme-color" content="#162b57">
-  <link rel="manifest" href="manifest.json">
-
-  <link rel="stylesheet" href="style.css">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Ελληνική Αρθροσκοπική Εταιρία | Mini App</title>  <meta name="theme-color" content="#162b57">
+  <meta name="description" content="Mini app της Ελληνικής Αρθροσκοπικής Εταιρίας με newsletter, συνέδρια, webinars, ανακοινώσεις, υποτροφίες και χρήσιμους συνδέσμους.">  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">  <script src="https://unpkg.com/lucide@latest"></script></head><body>  <div class="app-container"><div class="background-logo" style="background-image: url('images/EAE_logo_EN.png');"></div>
 
-  <script src="https://unpkg.com/lucide@latest"></script>
+<header class="app-header">
+  <img
+    class="clinic-logo"
+    src="images/EAE_logo_EN.png"
+    alt="Ελληνική Αρθροσκοπική Εταιρία">
 
-</head>
+  <div class="header-text">
+    <h1>Ελληνική Αρθροσκοπική Εταιρία</h1>
+    <p>Γεώργιος Νούλης</p>
+  </div>
+</header>
 
-<body>
-
-<div class="app-container">
-
-  <div class="background-logo" style="background-image: url('images/EAE_logo_EN.png');"></div>
-
-  <header class="app-header">
-    <img
-      class="clinic-logo"
-      src="images/EAE_logo_EN.png"
-      alt="Ελληνική Αρθροσκοπική Εταιρία">
-
-```
-<div class="header-text">
-  <h1>Ελληνική Αρθροσκοπική Εταιρία</h1>
-  <p>Γεώργιος Νούλης</p>
-</div>
-```
-
-  </header>
-
-  <section class="welcome-card">
-    <p class="welcome-label">EAE Mini App</p>
-    <h2>Ενημέρωση, δράσεις και σύνδεσμοι</h2>
-  </section>
-
-  <a class="appointment-card" href="#">
-    <div class="appointment-icon">
-      <i data-lucide="mail"></i>
-    </div>
-
-```
-<section>
-  <h2>Newsletter</h2>
-  <p>Εγγραφή και ενημέρωση για νέα & δράσεις</p>
+<section class="welcome-card">
+  <p class="welcome-label">EAE MINI APP</p>
+  <h2>Ενημέρωση, δράσεις και σύνδεσμοι</h2>
 </section>
 
-<span>›</span>
-```
+<a class="appointment-card" href="#">
+  <div class="appointment-icon">
+    <i data-lucide="mail"></i>
+  </div>
 
+  <section>
+    <h2>Newsletter</h2>
+    <p>Εγγραφή και ενημέρωση για νέα &amp; δράσεις</p>
+  </section>
+
+  <span>›</span>
+</a>
+
+<main class="dashboard-grid">
+
+  <a class="grid-card" href="#">
+    <i data-lucide="calendar-days"></i>
+    <strong>Συνέδρια</strong>
   </a>
 
-  <main class="dashboard-grid">
+  <a class="grid-card" href="#">
+    <i data-lucide="video"></i>
+    <strong>Webinars</strong>
+  </a>
 
-```
-<a class="grid-card" href="#">
-  <i data-lucide="calendar-days"></i>
-  <strong>Συνέδρια</strong>
-</a>
+  <a class="grid-card" href="#">
+    <i data-lucide="megaphone"></i>
+    <strong>Ανακοινώσεις</strong>
+  </a>
 
-<a class="grid-card" href="#">
-  <i data-lucide="video"></i>
-  <strong>Webinars</strong>
-</a>
+  <a class="grid-card" href="#">
+    <i data-lucide="award"></i>
+    <strong>Υποτροφίες</strong>
+  </a>
 
-<a class="grid-card" href="#">
-  <i data-lucide="megaphone"></i>
-  <strong>Ανακοινώσεις</strong>
-</a>
+  <a class="grid-card" href="#">
+    <i data-lucide="mail"></i>
+    <strong>Επικοινωνία</strong>
+  </a>
 
-<a class="grid-card" href="#">
-  <i data-lucide="award"></i>
-  <strong>Υποτροφίες</strong>
-</a>
+  <a class="grid-card" href="#">
+    <i data-lucide="external-link"></i>
+    <strong>ESSKA</strong>
+  </a>
 
-<a class="grid-card" href="#">
-  <i data-lucide="mail"></i>
-  <strong>Επικοινωνία</strong>
-</a>
+</main>
 
-<a class="grid-card" href="#">
-  <i data-lucide="external-link"></i>
-  <strong>ESSKA</strong>
-</a>
-```
-
-  </main>
-
-</div>
-
-<script>
-  lucide.createIcons();
-</script>
-
-</body>
+  </div>  <script>
+    lucide.createIcons();
+  </script></body>
 </html>
