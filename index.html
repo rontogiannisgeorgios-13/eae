@@ -9,52 +9,28 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="apple-mobile-web-app-title" content="EAE">
-  <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="images/icon-192.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json?v=20260630-2">
+  <link rel="apple-touch-icon" href="images/icon-192.png?v=20260630-2">
+  <link rel="stylesheet" href="style.css?v=20260630-2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
   <div class="app-container">
     <div class="background-logo" style="background-image: url('images/EAE_logo_EN.png');"></div>
-
     <header class="app-header">
       <img class="clinic-logo" src="images/EAE_logo_EN.png" alt="Ελληνική Αρθροσκοπική Εταιρεία">
-      <div class="header-text">
-        <h1>Ελληνική Αρθροσκοπική Εταιρεία</h1>
-        <p>Γεώργιος Νούλης</p>
-      </div>
+      <div class="header-text"><h1>Ελληνική Αρθροσκοπική Εταιρεία</h1><p>Γεώργιος Νούλης</p></div>
     </header>
-
-    <section class="welcome-card">
-      <p class="welcome-label">EAE MINI APP</p>
-      <h2>Ενημέρωση, δράσεις και σύνδεσμοι</h2>
-    </section>
-
+    <section class="welcome-card"><p class="welcome-label">EAE MINI APP</p><h2>Ενημέρωση, δράσεις και σύνδεσμοι</h2></section>
     <section class="install-panel" aria-label="Εγκατάσταση εφαρμογής">
-      <button class="install-button android-install" type="button">
-        <i data-lucide="smartphone"></i>
-        <span>Εγκατάσταση σε Android</span>
-      </button>
-      <button class="install-button ios-install" type="button">
-        <i data-lucide="apple"></i>
-        <span>Εγκατάσταση σε iOS</span>
-      </button>
+      <button class="install-button android-install" type="button"><i data-lucide="smartphone"></i><span>Android</span></button>
+      <button class="install-button ios-install" type="button"><i data-lucide="apple"></i><span>iOS</span></button>
       <p class="install-help" role="status" aria-live="polite"></p>
     </section>
-
-    <a class="appointment-card" href="https://www.eae-net.gr/el/newsletter-gr" target="_blank" rel="noopener noreferrer">
-      <div class="appointment-icon"><i data-lucide="mail"></i></div>
-      <section>
-        <h2>Newsletter</h2>
-        <p>Εγγραφή και ενημέρωση για νέα και δράσεις</p>
-      </section>
-      <span aria-hidden="true">›</span>
-    </a>
-
+    <a class="appointment-card" href="https://www.eae-net.gr/el/newsletter-gr" target="_blank" rel="noopener noreferrer"><div class="appointment-icon"><i data-lucide="mail"></i></div><section><h2>Newsletter</h2><p>Εγγραφή και ενημέρωση για νέα και δράσεις</p></section><span aria-hidden="true">›</span></a>
     <main class="dashboard-grid">
       <a class="grid-card" href="https://www.eae-net.gr/el/draseis-eae" target="_blank" rel="noopener noreferrer"><i data-lucide="calendar-days"></i><strong>Συνέδρια</strong></a>
       <a class="grid-card" href="https://www.eae-net.gr/el/draseis-eae/webinars-eae" target="_blank" rel="noopener noreferrer"><i data-lucide="video"></i><strong>Webinars</strong></a>
@@ -64,61 +40,23 @@
       <a class="grid-card" href="https://www.esska.org/" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i><strong>ESSKA</strong></a>
     </main>
   </div>
-
   <script>
-    const androidButton = document.querySelector('.android-install');
-    const iosButton = document.querySelector('.ios-install');
-    const installHelp = document.querySelector('.install-help');
-    let deferredInstallPrompt = null;
-    const isIos = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
-    const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
-
-    function setInstallMessage(message) {
-      installHelp.textContent = message;
-    }
-
-    if (window.lucide) {
-      lucide.createIcons();
-    }
-
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js').catch(() => {
-          setInstallMessage('Η offline λειτουργία δεν ενεργοποιήθηκε σε αυτό το περιβάλλον.');
-        });
-      });
-    }
-
-    if (isStandalone) {
-      androidButton.disabled = true;
-      iosButton.disabled = true;
-      setInstallMessage('Η εφαρμογή είναι ήδη εγκατεστημένη.');
-    } else if (isIos) {
-      androidButton.hidden = true;
-      setInstallMessage('Στο iPhone ή iPad πατήστε Κοινή χρήση και μετά Προσθήκη στην οθόνη αφετηρίας.');
-    } else {
-      setInstallMessage('Σε Android, πατήστε το κουμπί όταν εμφανιστεί η επιλογή εγκατάστασης.');
-    }
-
-    window.addEventListener('beforeinstallprompt', (event) => {
-      event.preventDefault();
-      deferredInstallPrompt = event;
-      androidButton.disabled = false;
-      setInstallMessage('Η εγκατάσταση είναι διαθέσιμη για αυτή τη συσκευή.');
-    });
-
-    androidButton.addEventListener('click', async () => {
-      if (!deferredInstallPrompt) {
-        setInstallMessage('Αν δεν εμφανίζεται ακόμα εγκατάσταση, ανοίξτε το μενού του browser και επιλέξτε Εγκατάσταση εφαρμογής.');
-        return;
-      }
-      deferredInstallPrompt.prompt();
-      await deferredInstallPrompt.userChoice;
-      deferredInstallPrompt = null;
-    });
-
-    iosButton.addEventListener('click', () => {
-      setInstallMessage('Στο iOS: Κοινή χρήση, έπειτα Προσθήκη στην οθόνη αφετηρίας.');
+    window.addEventListener('DOMContentLoaded', () => {
+      const androidButton = document.querySelector('.android-install');
+      const iosButton = document.querySelector('.ios-install');
+      const installHelp = document.querySelector('.install-help');
+      let deferredInstallPrompt = null;
+      const isIos = /iphone|ipad|ipod/i.test(window.navigator.userAgent);
+      const isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone;
+      const setInstallMessage = (message) => { installHelp.textContent = message; };
+      if (window.lucide) lucide.createIcons();
+      if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js?v=20260630-2').catch(() => setInstallMessage('Η offline λειτουργία δεν ενεργοποιήθηκε σε αυτό το περιβάλλον.'));
+      if (isStandalone) { androidButton.disabled = true; iosButton.disabled = true; setInstallMessage('Η εφαρμογή είναι ήδη εγκατεστημένη.'); }
+      else if (isIos) { androidButton.hidden = true; setInstallMessage('iPhone/iPad: Κοινή χρήση και μετά Προσθήκη στην οθόνη αφετηρίας.'); }
+      else setInstallMessage('Για εγκατάσταση, πατήστε Android ή το μενού του browser.');
+      window.addEventListener('beforeinstallprompt', (event) => { event.preventDefault(); deferredInstallPrompt = event; androidButton.disabled = false; setInstallMessage('Η εγκατάσταση είναι διαθέσιμη για αυτή τη συσκευή.'); });
+      androidButton.addEventListener('click', async () => { if (!deferredInstallPrompt) { setInstallMessage('Ανοίξτε το μενού του browser και επιλέξτε Εγκατάσταση εφαρμογής.'); return; } deferredInstallPrompt.prompt(); await deferredInstallPrompt.userChoice; deferredInstallPrompt = null; });
+      iosButton.addEventListener('click', () => setInstallMessage('Στο iOS: Κοινή χρήση, έπειτα Προσθήκη στην οθόνη αφετηρίας.'));
     });
   </script>
 </body>

@@ -176,7 +176,8 @@ body {
   transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-.install-button i {
+.install-button i,
+.install-button svg {
   width: 19px;
   height: 19px;
   color: var(--primary);
@@ -254,7 +255,8 @@ body {
   flex-shrink: 0;
 }
 
-.appointment-icon i {
+.appointment-icon i,
+.appointment-icon svg {
   width: 28px;
   height: 28px;
   color: #ffffff;
@@ -305,6 +307,8 @@ body {
   min-width: 0;
   width: 100%;
   min-height: 118px;
+  aspect-ratio: 1 / 0.78;
+  overflow: hidden;
   border-radius: 26px;
   padding: 18px 12px;
   text-decoration: none;
@@ -325,11 +329,13 @@ body {
     border-color 0.18s ease;
 }
 
-.grid-card i {
+.grid-card i,
+.grid-card svg {
   width: 31px;
   height: 31px;
   color: var(--primary);
   stroke-width: 1.9;
+  flex-shrink: 0;
 }
 
 .grid-card strong {
