@@ -1,11 +1,11 @@
-const CACHE_NAME = 'eae-mini-app-v5';
+const CACHE_NAME = 'eae-mini-app-v6';
 const APP_BASE = new URL('./', self.registration.scope).pathname;
 const OFFLINE_URL = APP_BASE;
 
 const PRECACHE_PATHS = [
   '',
   'index.html',
-  'style.css?v=20260630-3',
+  'style.css?v=20260630-4',
   'style.css',
   'manifest.json',
   'images/EAE_logo_EN.png',

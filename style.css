@@ -302,18 +302,17 @@ body {
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
-  margin-top: 18px;
+  gap: 10px;
+  margin-top: 14px;
 }
 
 .grid-card {
   min-width: 0;
   width: 100%;
-  min-height: 118px;
-  aspect-ratio: 1 / 0.78;
+  min-height: 94px;
   overflow: hidden;
-  border-radius: 26px;
-  padding: 18px 12px;
+  border-radius: 22px;
+  padding: 12px 10px;
   text-decoration: none;
   color: var(--primary-deep);
   background: rgba(255, 255, 255, 0.94);
@@ -323,7 +322,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 13px;
+  gap: 8px;
   text-align: center;
   backdrop-filter: blur(12px);
   transition:
@@ -334,8 +333,8 @@ body {
 
 .grid-card i,
 .grid-card svg {
-  width: 31px;
-  height: 31px;
+  width: 26px;
+  height: 26px;
   color: var(--primary);
   stroke-width: 1.9;
   flex-shrink: 0;
@@ -343,7 +342,7 @@ body {
 
 .grid-card strong {
   display: block;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.16;
   font-weight: 750;
   color: var(--primary-deep);
@@ -401,8 +400,8 @@ body {
   }
 
   .grid-card {
-    min-height: 110px;
-    border-radius: 23px;
+    min-height: 92px;
+    border-radius: 20px;
   }
 }
 
